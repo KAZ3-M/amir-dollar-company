@@ -1,0 +1,37 @@
+!DOCTYPE html
+html lang=ar
+head
+  meta charset=UTF-8
+  titleتسجيل العملاء - شركة الأميرtitle
+  link rel=stylesheet href=style.css
+head
+body
+  headerتسجيل العملاءheader
+  div class=container
+    form id=registerForm
+      input type=text id=name placeholder=الاسم الكامل required
+      input type=email id=email placeholder=البريد الإلكتروني required
+      input type=tel id=phone placeholder=رقم الهاتف required
+      input type=number id=total placeholder=المبلغ الكلي (دينار) required
+      button type=submitتسجيلbutton
+    form
+  div
+
+  script
+    document.getElementById(registerForm).addEventListener(submit, function(e) {
+      e.preventDefault();
+      const client = {
+        name name.value,
+        email email.value,
+        phone phone.value,
+        total parseInt(total.value),
+        paid 0,
+        payments 0
+      };
+      localStorage.setItem(client.email, JSON.stringify(client));
+      alert(تم التسجيل بنجاح!);
+      window.location.href = client.htmlemail= + encodeURIComponent(client.email);
+    });
+  script
+body
+html

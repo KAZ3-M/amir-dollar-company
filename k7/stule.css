@@ -1,0 +1,50 @@
+
+body {
+  font-family Cairo, sans-serif;
+  background-color #ffffff;
+  direction rtl;
+  text-align center;
+  margin 0;
+  padding 0;
+}
+
+header {
+  background-color #0a1f44;  أزرق داكن 
+  color #d4af37;  ذهبي 
+  padding 15px;
+  font-size 22px;
+  font-weight bold;
+  letter-spacing 1px;
+}
+
+.container {
+  background #f9f9f9;
+  margin 40px auto;
+  padding 30px;
+  border-radius 10px;
+  width 90%;
+  max-width 420px;
+  box-shadow 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, button {
+  width 90%;
+  padding 10px;
+  margin 10px 0;
+  border-radius 5px;
+  border 1px solid #ccc;
+  font-size 15px;
+}
+
+button {
+  background-color #d4af37;  ذهبي 
+  color #0a1f44;  أزرق داكن 
+  border none;
+  cursor pointer;
+  font-weight bold;
+  transition 0.3s;
+}
+
+buttonhover {
+  background-color #b8962e;  ذهبي داكن عند التمرير 
+}

@@ -1,0 +1,43 @@
+!DOCTYPE html
+html lang=ar
+head
+  meta charset=UTF-8
+  titleصفحة العميل - شركة الأميرtitle
+  link rel=stylesheet href=style.css
+head
+body
+  headerتفاصيل القسطheader
+  div class=container
+    h3 id=nameh3
+    pالمبلغ الكلي span id=totalspan دينارp
+    pالمبلغ المدفوع span id=paidspan دينارp
+    pالمتبقي span id=remainingspan دينارp
+    pعدد الدفعات span id=paymentsspanp
+    button id=payBtnإضافة دفعةbutton
+  div
+
+  script
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get(email);
+    const client = JSON.parse(localStorage.getItem(email));
+
+    if (client) {
+      document.getElementById(name).textContent = العميل  + client.name;
+      document.getElementById(total).textContent = client.total.toLocaleString(ar-IQ);
+      document.getElementById(paid).textContent = client.paid.toLocaleString(ar-IQ);
+      document.getElementById(remaining).textContent = (client.total - client.paid).toLocaleString(ar-IQ);
+      document.getElementById(payments).textContent = client.payments;
+    }
+
+    document.getElementById(payBtn).addEventListener(click, function() {
+      const payment = prompt(أدخل مبلغ الدفعة بالدينار);
+      if (payment && !isNaN(payment)) {
+        client.paid += parseInt(payment);
+        client.payments += 1;
+        localStorage.setItem(email, JSON.stringify(client));
+        location.reload();
+      }
+    });
+  script
+body
+html
